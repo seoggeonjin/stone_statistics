@@ -9,9 +9,7 @@ setuptools.setup(
     author="Stone",
     author_email="seoggeonjin@gmail.com",
     install_requires=[
-        'dependency1>=1.0',
-        'dependency2==2.5.0',
-        'dependency3<3.0',
+        'Fraction>=2.2.0'
     ],
     description="Stone's Statistics Library",
     long_description=long_description,
