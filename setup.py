@@ -23,4 +23,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.12',
+    url="https://github.com/seoggeonjin/stone_statistics",
+    download_url="https://github.com/seoggeonjin/stone_statistics/archive/master.zip"
 )
