@@ -1,7 +1,7 @@
 import math
 import re
 
-from .Stat import *
+from .stat import *
 
 
 def get_list():
@@ -84,7 +84,7 @@ if __name__ == '__main__':
             size = len(l)
             if size == 0:
                 break
-            aver = average(l)
+            aver = mean(l)
             s = sum(l)
             s3 = Fraction(0, 1)
             print("편차: ")
@@ -123,7 +123,7 @@ if __name__ == '__main__':
             print(f"제곱의 총합: {sum([i ** 2 for i in l])}")
             s1 = square_sum(l)
             print(f"편차 제곱의 합: {s1}")
-            print(f"분산: {breakup(l2)}")
+            print(f"분산: {variance(l2)}")
             v1 = int(math.sqrt(s1 / size))
             v2 = math.sqrt(s1 / size)
             v = v1 if v2 == v1 else v2

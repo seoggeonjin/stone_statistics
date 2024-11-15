@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="stones_statistics",  # Replace with your own username
-    version="0.1.1",
+    version="0.2.0",
     author="Stone",
     author_email="seoggeonjin@gmail.com",
     install_requires=[

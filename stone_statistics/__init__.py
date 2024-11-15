@@ -1,1 +1,1 @@
-from .Stat import *
+from .stat import *

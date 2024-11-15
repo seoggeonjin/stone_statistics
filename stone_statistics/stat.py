@@ -1,7 +1,7 @@
 from fractions import Fraction
 
 
-def average(x: list[Fraction]):
+def mean(x: list[Fraction]):
     x2 = x[:]
     if not x2:
         return Fraction(0)
@@ -38,12 +38,12 @@ def mode(x: list[Fraction]):
         return x2
 
 
-def sub(x: list[Fraction]):
+def deviation(x: list[Fraction]):
     x2 = x[:]
     if not x2:
         return Fraction(0)
     size = len(x2)
-    aver = average(x2)
+    aver = mean(x2)
     result = {}
     for i in range(size):
         result[x2[i]] = x2[i] - aver
@@ -54,7 +54,7 @@ def square(x: list[Fraction]):
     x2 = x[:]
     if not x2:
         return Fraction(0)
-    r = sub(x2)
+    r = deviation(x2)
     return {i: r[i] ** 2 for i in r}
 
 
@@ -63,14 +63,14 @@ def square_sum(x: list[Fraction]):
     if not x2:
         return Fraction(0)
     size = len(x2)
-    aver = average(x2)
+    aver = mean(x2)
     result = Fraction(0)
     for i in range(size):
         result += (x2[i] - aver) ** 2
     return result
 
 
-def breakup(x: list[Fraction]):
+def variance(x: list[Fraction]):
     x2 = x[:]
     if not x2:
         return Fraction(0)
@@ -78,20 +78,20 @@ def breakup(x: list[Fraction]):
     return Fraction(r, len(x2))
 
 
-def deviation(x: list[Fraction]) -> Fraction | float:
+def standard_deviation(x: list[Fraction]) -> Fraction | float:
     x2 = x[:]
-    return breakup(x2) ** (1 / 2)
+    return variance(x2) ** (1 / 2)
 
 
 if __name__ == '__main__':
     ml = [1, 3, 3, 4]
     ml = [Fraction(i, 1) for i in ml]
-    print(average(ml))
+    print(mean(ml))
     print(median(ml))
     print(mode(ml))
-    print(sub(ml))
+    print(deviation(ml))
     print(square(ml))
     print(square_sum(ml))
-    print(breakup(ml))
-    print(deviation(ml))
+    print(variance(ml))
+    print(standard_deviation(ml))
     del ml
