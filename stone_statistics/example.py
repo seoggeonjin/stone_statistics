@@ -1,7 +1,7 @@
 import math
 import re
 
-from Stat import *
+from .Stat import *
 
 
 def get_list():
